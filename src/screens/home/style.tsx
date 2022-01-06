@@ -17,6 +17,10 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10,
   },
+  text: {
+    fontSize: fontSize.average,
+    color: colors.greyText,
+  },
   textInputContainer: {
     backgroundColor: colors.lightGrey,
     paddingHorizontal: 15,
@@ -31,6 +35,7 @@ export const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     paddingVertical: Platform.OS === 'android' ? 10 : 15,
+    color: colors.black,
   },
   rowContainer: {
     flexDirection: 'row',
@@ -39,6 +44,7 @@ export const styles = StyleSheet.create({
   },
   sortIcon: {
     padding: 10,
+    marginRight: 10,
   },
   sortIconStyle: {
     width: 20,

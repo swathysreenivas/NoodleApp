@@ -85,7 +85,7 @@ export const Home = ({navigation}: Props) => {
           setIsSorting(false);
           setSearchList([]);
         }}>
-        <Text>{strings.main.clearSort}</Text>
+        <Text style={styles.text}>{strings.main.clearSort}</Text>
       </TouchableOpacity>
     );
   }
@@ -103,13 +103,14 @@ export const Home = ({navigation}: Props) => {
               handleSearchText(text);
             }}
             placeholder={strings.main.searchPlaceholder}
+            placeholderTextColor={colors.greyText}
           />
           <TouchableOpacity
             onPress={() => {
               setSearchText('');
               setSearchList([]);
             }}>
-            <Text>clear</Text>
+            <Text style={styles.text}>clear</Text>
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.sortIcon} onPress={() => sortList()}>
@@ -126,9 +127,7 @@ export const Home = ({navigation}: Props) => {
   function handleSearchText(text: string) {
     let empList = [...dataList];
     setSearchText(text);
-    let filterList = empList.filter(item =>
-      item.Brand.toLowerCase().includes(text),
-    );
+    let filterList = empList.filter(item => item.Brand.includes(text));
 
     setSearchList(filterList);
   }
